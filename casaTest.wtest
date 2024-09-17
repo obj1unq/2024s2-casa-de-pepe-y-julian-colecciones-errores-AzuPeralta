@@ -1,0 +1,11 @@
+// import cosas.*
+// import casa.*
+// describe "Casa De Pepe y Julian" {
+//   test "Compras" {
+//     casa.comprar(heladera)
+//     casa.comprar(cama)
+//     casa.comprar(plancha)
+//     assert.that()
+
+//   }
+// }
