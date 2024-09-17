@@ -6,6 +6,7 @@
 //     casa.comprar(cama)
 //     casa.comprar(plancha)
 //     assert.that()
-
+// assert.throwsException({recibe un bloque donde se ejecuta lo que quiero que de error })
 //   }
 // }
+
