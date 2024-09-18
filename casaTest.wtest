@@ -1,0 +1,35 @@
+import cosas.*
+import casa.*
+import cuentas.*
+
+describe "Casa De Pepe y Julian" {
+    //Inicializa el saldo en 30.000
+    method initialize() {
+        cuentaCorriente.saldo(30000)
+    }
+  test "Compras" {
+    casa.comprar(heladera)
+    casa.comprar(cama)
+    casa.comprar(plancha)
+    assert.equals([heladera, cama, plancha], casa.cosas())
+    assert.equals(3, casa.cantidadDeCosasCompradas())
+    assert.that(casa.tieneAlgun(electrodomestico))
+    assert.that(casa.tieneAlgun(mueble))
+    assert.notThat(casa.tieneAlgun(comida))
+    assert.that(casa.vieneDeComprar(electrodomestico))
+    assert.notThat(casa.vieneDeComprar(mueble))
+    assert.that(casa.esDerrochona())
+    assert.equals(29200, casa.totalComprado())
+    assert.equals([heladera, plancha], casa.comprados(electrodomestico))
+    assert.equals([cama], casa.comprados(mueble))
+    assert.notThat(casa.tieneAlgun(comida))
+    assert.notThat(casa.malaEpoca())
+    assert.equals([heladera, cama, plancha], casa.cosas())
+    assert.equals([tiraDeAsado, paqueteDeFideos], casa.queFaltaComprar([tiraDeAsado, plancha, paqueteDeFideos]))
+// codigo Leo. POR QUE UN SET? SI ESPERO UNA LISTA!? assert.equals(#{tiraDeAsado, paqueteDeFideos}, casa.queFaltaComprar(#{tiraDeAsado, plancha, paqueteDeFideos}))
+    assert.that(casa.faltaComida())
+    assert.equals(#{electrodomestico,mueble}, casa.categoriasCompradas())
+//assert.throwsException({recibe un bloque donde se ejecuta lo que quiero que de error })
+  }
+}
+
