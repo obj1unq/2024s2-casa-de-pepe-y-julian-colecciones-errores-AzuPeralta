@@ -6,6 +6,10 @@ object casa {
 	const cosas = []
 	var property cuenta = cuentaCorriente 
 
+	method cosas() {
+	  return cosas
+	}
+
 	method comprar(cosa) {
 	// registra que se ha comprado una cosa.
 	//Va primero la funcion que tiene la validacion
@@ -70,7 +74,7 @@ object casa {
 	}
 
 	method estaComprado(cosa) {
-	  return cosas.contains({cosa})
+	  return cosas.contains(cosa)
 	}
 
 	method faltaComida() {
